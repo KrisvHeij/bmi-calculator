@@ -1,0 +1,7 @@
+/* Import font */
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url("../assets/fonts/Inter-VariableFont_slnt\,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+}
