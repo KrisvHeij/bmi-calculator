@@ -1,6 +1,6 @@
 /* Import font */
 @font-face {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter";
   src: url("../assets/fonts/Inter-VariableFont_slnt\,wght.ttf") format("truetype");
   font-weight: 100 900;
   font-display: swap;
@@ -30,5 +30,21 @@
   --spacing-1800: 9rem;
 }
 
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--c-white);
+}
 
