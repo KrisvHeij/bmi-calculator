@@ -35,22 +35,36 @@
           </p>
         </div>
         <div class="calculator">
-          <p>Enter your details below</p>
-          <div>
-            <div class="unit-inputs">
-              <input id="metric" type="radio" />
-              <label for="metric">Metric</label>
+          <p class="calculator-header">Enter your details below</p>
+          <div class="radio-input-container">
+            <div class="radio-group">
+              <input id="metric" class="radio-input" type="radio" />
+              <label class="text-preset-6-semi" for="metric">Metric</label>
             </div>
-            <div>
-              <input id="imperial" type="radio" />
-              <label for="imperial">Imperial</label>
+            <div class="radio-group">
+              <input id="imperial" class="radio-input" type="radio" />
+              <label class="text-preset-6-semi" for="imperial">Imperial</label>
             </div>
           </div>
-          <div class="body-inputs">
-            <div class="body-inputs-metric">
-              <div class="input-metric">
-                <label for="height-metric">Height</label>
-                <input id="height-metric" type="text" />
+          <div class="body-inputs-container">
+            <div class="metric-container">
+              <div class="metric-group">
+                <label class="text-preset-7-regular" for="height-metric"
+                  >Height</label
+                >
+                <div class="metric-input-group">
+                  <input id="height-metric" type="number" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="metric-group">
+                <label class="text-preset-7-regular" for="height-metric"
+                  >Weight</label
+                >
+                <div class="metric input-group">
+                  <input id="height-metric" type="number" />
+                  <span>kg</span>
+                </div>
               </div>
             </div>
           </div>

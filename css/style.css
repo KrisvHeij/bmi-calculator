@@ -79,9 +79,9 @@
   line-height: 600;
   letter-spacing: -5%;
 }
-
+/* save */
 .text-preset-6-semi {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   line-height: 1.5;
 }
@@ -97,9 +97,9 @@
   font-weight: 700;
   line-height: 1.5;
 }
-
+/* save */
 .text-preset-7-regular {
-  font-weight: 14px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
 }
@@ -171,4 +171,70 @@ body {
   gap: clamp(1.5rem, calc(1.023rem + 2.036vw), 2rem);
   padding: clamp(1.5rem, calc(1.023rem + 2.036vw), 2rem);
   background-color: var(--c-white);
+}
+
+.calculator-header {
+  color: var(--c-blue-900);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -5%;
+}
+
+.radio-input-container {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: 50%;
+}
+
+.radio-input {
+  appearance: none;
+  width: 31px;
+  height: 31px;
+  border: 1px solid var(--c-grey-500);
+  border-radius: 50%;
+}
+
+/* Checked state for radio input */
+.radio-input-checked {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: var(--c-blue-100);
+}
+
+.radio-input-checked::after {
+  display: inline-block;
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-color: var(--c-blue-500);
+  border-radius: 50%;
+}
+
+.radio-group label {
+  color: var(--c-blue-900);     
+}
+
+/* Body input container */
+.metric-container {
+  display: grid;
+  gap: clamp(1rem, calc(0.523rem + 2.036vw), 1.5rem);
+}
+
+.metric-group label {
+  display: block;
+  margin-block-end: 0.5rem;
+  color: var(--c-grey-500);
+}
+
+.metric-input-group {
+  
 }
