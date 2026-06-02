@@ -236,5 +236,19 @@ body {
 }
 
 .metric-input-group {
-  
+  display: flex;
+  /* justify-content: space-between; */
+  padding: clamp(1rem, calc(2.389rem - 1.852vw), 1.5rem);
+  border: 1px solid var(--c-grey-500);
+  border-radius: 0.75rem;
+}
+
+.metric-input-group input {
+  border: none;
+  color: var(--c-grey-500);
+  width: 100%;
+}
+
+.metric-input-group span {
+  color: var(--c-blue-500);
 }
