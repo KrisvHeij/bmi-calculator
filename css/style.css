@@ -77,7 +77,7 @@
   font-size: 20px;
   font-weight: 600;
   line-height: 600;
-  letter-spacing: -5%;
+  letter-spac ing: -5%;
 }
 /* save */
 .text-preset-6-semi {
@@ -137,6 +137,7 @@ body {
   height: 100%;
   background: linear-gradient(90deg, var(--c-white), hsl(183, 95%, 92%, 0.4), var(--c-gradient-light));
   position: absolute;
+  top: -40%;
   z-index: -5;
   border-bottom-right-radius: 35px;
 }
@@ -171,7 +172,8 @@ body {
   gap: clamp(1.5rem, calc(1.023rem + 2.036vw), 2rem);
   padding: clamp(1.5rem, calc(1.023rem + 2.036vw), 2rem);
   background-color: var(--c-white);
-}
+  border-radius: 1rem;
+  box-shadow: 16px 32px 55px 0px rgba(143,174,207,0.25);
 
 .calculator-header {
   color: var(--c-blue-900);
@@ -199,6 +201,16 @@ body {
   height: 31px;
   border: 1px solid var(--c-grey-500);
   border-radius: 50%;
+  cursor: pointer;
+}
+
+.radio-input:hover {
+  border-color: var(--c-blue-500);
+}
+
+.radio-input:focus {
+  border-color: var(--c-blue-500);
+  outline: none;
 }
 
 /* Checked state for radio input */
@@ -206,7 +218,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: none;
+  border-color: transparent;
   background-color: var(--c-blue-100);
 }
 
@@ -237,18 +249,51 @@ body {
 
 .metric-input-group {
   display: flex;
-  /* justify-content: space-between; */
   padding: clamp(1rem, calc(2.389rem - 1.852vw), 1.5rem);
   border: 1px solid var(--c-grey-500);
   border-radius: 0.75rem;
 }
 
+.metric-input-group:hover,
+.metric-input-group:has(input:focus) {
+  outline: none;
+  border-color: var(--c-blue-500);
+}
+
 .metric-input-group input {
+  width: 100%;
   border: none;
   color: var(--c-grey-500);
-  width: 100%;
+}
+
+.metric-input-group input::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+.metric-input-group input:focus {
+  outline: none;
 }
 
 .metric-input-group span {
   color: var(--c-blue-500);
+}
+
+.calculator-text {
+  margin-block-start: clamp(1rem, calc(0.523rem + 2.036vw), 1.5rem);
+  padding: var(--spacing-400);
+  color: var(--c-white);
+  background-color: var(--c-blue-500);
+  border-radius: 1rem;
+}
+
+.calculator h2 {
+  margin-block-end: clamp(1rem, calc(1.977rem - 2.036vw), 1.5rem);
+}
+
+/* Media queries */
+@media (min-width: 48rem) {
+  .calculator-text {
+    border-top-right-radius: 999px;
+    border-bottom-right-radius: 999px;
+  }
 }

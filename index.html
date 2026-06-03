@@ -35,7 +35,9 @@
           </p>
         </div>
         <div class="calculator">
-          <p class="calculator-header">Enter your details below</p>
+          <p class="calculator-header" aria-labelledby="calculator-description">
+            Enter your details below
+          </p>
           <div class="radio-input-container">
             <div class="radio-group">
               <input id="metric" class="radio-input" type="radio" />
@@ -59,7 +61,7 @@
                     type="number"
                     value="0"
                   />
-                  <span>cm</span>
+                  <span class="text-preset-4">cm</span>
                 </div>
               </div>
               <div class="metric-group">
@@ -73,9 +75,15 @@
                     type="number"
                     value="0"
                   />
-                  <span>kg</span>
+                  <span class="text-preset-4">kg</span>
                 </div>
               </div>
+            </div>
+            <div class="calculator-text">
+              <h2 class="text-preset-4">Welcome!</h2>
+              <p id="calculator-description" class="text-preset-7-regular">
+                Enter your height and weight and you'll see your BMI result here
+              </p>
             </div>
           </div>
         </div>
