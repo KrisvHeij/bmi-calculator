@@ -50,48 +50,104 @@
           </div>
           <div class="body-inputs-container">
             <div class="body-inner-container">
-              <div class="metric-group">
-                <label class="text-preset-7-regular" for="height-metric"
+              <div class="body-group">
+                <label class="text-preset-7-regular" aria-label="height"
                   >Height</label
                 >
-                <div class="metric-input-group">
+                <div class="body-input-group">
                   <input
-                    id="height-metric"
                     class="text-preset-4"
                     type="number"
                     value="0"
+                    aria-label="height in centimeters"
                   />
                   <span class="text-preset-4">cm</span>
                 </div>
+                <div class="imperial-input-group hidden">
+                  <div class="body-input-group">
+                    <input
+                      id="height-imperial-ft"
+                      class="text-preset-4"
+                      type="number"
+                      value="0"
+                      aria-label="height in feet"
+                    />
+                    <span class="text-preset-4">ft</span>
+                  </div>
+                  <div class="body-input-group">
+                    <input
+                      id="height-imperial-in"
+                      class="text-preset-4"
+                      type="number"
+                      value="0"
+                      aria-label="height in inches"
+                    />
+                    <span class="text-preset-4">in</span>
+                  </div>
+                </div>
               </div>
-              <div class="metric-group">
-                <label class="text-preset-7-regular" for="height-metric"
+              <div class="body-group">
+                <label class="text-preset-7-regular" aria-label="weight"
                   >Weight</label
                 >
-                <div class="metric-input-group">
+                <div class="body-input-group">
                   <input
-                    id="weight-metric"
                     class="text-preset-4"
                     type="number"
                     value="0"
+                    aria-label="weight in kilograms"
                   />
                   <span class="text-preset-4">kg</span>
                 </div>
+                <div class="imperial-input-group hidden">
+                  <div class="body-input-group">
+                    <input
+                      id="weight-imperial-st"
+                      class="text-preset-4"
+                      type="number"
+                      value="0"
+                      aria-label="weight in stone"
+                    />
+                    <span class="text-preset-4">st</span>
+                  </div>
+                  <div class="body-input-group">
+                    <input
+                      id="weight-imperial-lbs"
+                      class="text-preset-4"
+                      type="number"
+                      value="0"
+                      aria-label="weight in pounds"
+                    />
+                    <span class="text-preset-4">lbs</span>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="imperial-container"></div>
-            <div class="calculator-text">
-              <h2 class="text-preset-4">Welcome!</h2>
-              <p id="calculator-description" class="text-preset-7-regular">
-                Enter your height and weight and you'll see your BMI result here
-              </p>
+            <div class="calculator-result-container">
+              <div id="calculator-text" class="hidden">
+                <h2 class="text-preset-4">Welcome!</h2>
+                <p class="text-preset-7-regular">
+                  Enter your height and weight and you'll see your BMI result
+                  here
+                </p>
+              </div>
+              <div id="calculator-result" class="calculator-result">
+                <div class="calculator-result-header">
+                  <p class="text-preset-6-semi">Your BMI is...</p>
+                  <p id="bmi-result" class="text-preset-2">22.0</p>
+                </div>
+                <p class="calculator-result-description">
+                  Your BMI suggests you're ((add classification)). Your ideal
+                  weight is between ((add range)).
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <section class="bmi-explanation">
-        <h2></h2>
+        <!-- <h2></h2> -->
       </section>
     </main>
     <!-- Body Mass Index Calculator -->
