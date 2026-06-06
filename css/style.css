@@ -306,6 +306,35 @@ body {
   margin-block-end: 0.5rem;
 }
 
+/* BMI explanation */ 
+.bmi-explanation {
+  padding-block : 3rem;
+  display: grid;
+  gap: clamp(3rem, calc(1.636rem + 5.818vw), 6rem);
+}
+
+.bmi-explanation-text {
+  padding-inline: var(--spacing-300);
+}
+
+.bmi-explanation-text h2 {
+  margin-block-end: var(--spacing-400);
+  font-size: clamp(2.00rem, calc(0.222rem + 3.704vw), 3.00rem);
+  line-height: 1.1;
+  letter-spacing: -5%;
+  color: var(--c-blue-900);
+}
+
+.bmi-explanation-text p {
+  color: var(--c-grey-500);
+}
+
+/* BMI items */
+.bmi-items-outer {
+  padding-block: clamp(3rem, calc(-2.333rem + 11.111vw), 6rem);
+  padding-inline: clamp(1.5rem, calc(0.546rem + 4.071vw), 2.5rem);
+}
+
 /* Media queries */
 @media (min-width: 48rem) {
   .calculator-result-container {
