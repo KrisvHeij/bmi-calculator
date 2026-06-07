@@ -333,7 +333,25 @@ body {
 .bmi-items-outer {
   padding-block: clamp(3rem, calc(-2.333rem + 11.111vw), 6rem);
   padding-inline: clamp(1.5rem, calc(0.546rem + 4.071vw), 2.5rem);
+  display: grid;
+  gap: clamp(32px, calc(54.222px - 1.852vw), 40px);
+  background: linear-gradient(90deg, var(--c-white), hsl(183, 95%, 92%, 0.4));
 }
+
+.bmi-item {
+  display: grid;
+  gap: var(--spacing-400);
+}
+ 
+.bmi-item-text h3 {
+  margin-block-end: var(--spacing-300);
+  color: var(--c-blue-900);                   
+}
+
+.bmi-item-text p {
+  color: var(--c-grey-500);
+}
+ 
 
 /* Media queries */
 @media (min-width: 48rem) {
@@ -343,9 +361,25 @@ body {
   }
 
   .calculator-result {
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .bmi-item {
+    grid-template-columns: auto 1fr;
+    gap: var(--spacing-500);
+  }
 }
+
+@media (min-width: 75rem) {
+  .bmi-items-outer {
+    display: flex;
+  }
+
+  .bmi-item {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-600);
+  }
 }
 
 .hidden {
