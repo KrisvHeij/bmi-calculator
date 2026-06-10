@@ -344,7 +344,7 @@ body {
 
 .bmi-items-inner {
   padding-block: clamp(3rem, calc(-2.333rem + 11.111vw), 6rem);
-  /* padding-inline: clamp(1.5rem, calc(0.546rem + 4.071vw), 2.5rem); */
+  padding-inline: clamp(1.5rem, calc(0.546rem + 4.071vw), 2.5rem);
   display: grid;
   gap: clamp(32px, calc(54.222px - 1.852vw), 40px);
 }
@@ -451,6 +451,7 @@ body {
   .bmi-explanation-text {
     padding-block-end: var(--spacing-400);
   }
+
   .curved-image {
     display: flex;
     justify-content: flex-end;
@@ -458,8 +459,17 @@ body {
     padding-inline-end: var(--spacing-300);
   }
 
+  .bmi-items-outer {
+    margin-inline-end: var(--spacing-400);
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+  }
+
   .bmi-items-inner {
     display: flex;
+    position: relative;
+    left: var(--spacing-200);
+    padding-inline: 0
   }
 
   .bmi-item {
