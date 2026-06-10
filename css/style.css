@@ -308,13 +308,21 @@ body {
 
 /* BMI explanation */ 
 .bmi-explanation {
-  padding-block : 3rem;
+  padding-block : clamp(3rem, calc(1.569rem + 6.107vw), 6rem);
   display: grid;
   gap: clamp(3rem, calc(1.636rem + 5.818vw), 6rem);
 }
 
+.bmi-explanation-image {
+  max-width: 35.25rem;
+}
+
+.curved-image {
+  display: none;
+}
+
 .bmi-explanation-text {
-  padding-inline: var(--spacing-300);
+  padding-inline-start: var(--spacing-300);
 }
 
 .bmi-explanation-text h2 {
@@ -331,11 +339,14 @@ body {
 
 /* BMI items */
 .bmi-items-outer {
+  background: linear-gradient(90deg, var(--c-white), hsl(183, 95%, 92%, 0.4));
+}
+
+.bmi-items-inner {
   padding-block: clamp(3rem, calc(-2.333rem + 11.111vw), 6rem);
-  padding-inline: clamp(1.5rem, calc(0.546rem + 4.071vw), 2.5rem);
+  /* padding-inline: clamp(1.5rem, calc(0.546rem + 4.071vw), 2.5rem); */
   display: grid;
   gap: clamp(32px, calc(54.222px - 1.852vw), 40px);
-  background: linear-gradient(90deg, var(--c-white), hsl(183, 95%, 92%, 0.4));
 }
 
 .bmi-item {
@@ -352,8 +363,23 @@ body {
   color: var(--c-grey-500);
 }
  
-
 /* Media queries */
+@media (min-width: 32rem) {
+  /* Body input container */
+  .calculator-result-container {
+    border-top-right-radius: 999px;
+    border-bottom-right-radius: 999px;
+  }
+
+  /* BMI explanation */
+  .bmi-explanation {
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    left: -5%;
+    align-items: center;
+  }
+}
+
 @media (min-width: 48rem) {
   /* Global styles */
   .wrapper {
@@ -390,15 +416,15 @@ body {
   .body-inner-container {
     grid-template-columns: 1fr 1fr;
   }
-  
-  .calculator-result-container {
-    border-top-right-radius: 999px;
-    border-bottom-right-radius: 999px;
-  }
 
   .calculator-result {
     grid-template-columns: 1fr 1fr;
     align-items: center;
+  }
+
+  /* BMI explanation */
+  .bmi-explanation {
+    left: 0;
   }
 
   .bmi-item {
@@ -413,7 +439,26 @@ body {
     padding-inline: 0;
   }
 
-  .bmi-items-outer {
+  /* BMI explanation */
+  .bmi-explanation {
+    grid-template-columns: max-content 1fr;
+  }
+
+  .bmi-explanation-image {
+    align-self: end;
+  }
+  
+  .bmi-explanation-text {
+    padding-block-end: var(--spacing-400);
+  }
+  .curved-image {
+    display: flex;
+    justify-content: flex-end;
+    margin-block-end: var(--spacing-400);
+    padding-inline-end: var(--spacing-300);
+  }
+
+  .bmi-items-inner {
     display: flex;
   }
 
