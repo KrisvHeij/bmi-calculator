@@ -76,7 +76,7 @@
 .text-preset-5 {
   font-size: 20px;
   font-weight: 600;
-  line-height: 600;
+  line-height: 1.2;
   letter-spacing: -5%;
 }
 
@@ -175,7 +175,7 @@ body {
   padding: clamp(1.5rem, calc(1.023rem + 2.036vw), 2rem);
   background-color: var(--c-white);
   border-radius: 1rem;
-  box-shadow: 16px 32px 55px 0px rgba(143, 174, 207, 0.25);
+  box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
 }
 .calculator-header {
   color: var(--c-blue-900);
@@ -362,6 +362,55 @@ body {
 .bmi-item-text p {
   color: var(--c-grey-500);
 }
+
+/* BMI limitations */
+.bmi-limitations-outer {
+  padding-block: clamp(5rem, calc(-2.333rem + 11.111vw), 6.5rem);
+  padding-inline: clamp(1.5rem, calc(0.546rem + 4.071vw), 2.5rem);
+  display: grid;
+  row-gap: clamp(1rem, calc(0.523rem + 2.036vw), 1.5rem);
+}
+
+.bmi-limitations-header {
+  text-align: center;
+  margin-block-end: clamp(0rem, calc(9.722rem - 12.963vw), 2.5rem);
+}
+
+.bmi-limitations-header h3 {
+  margin-block-end: var(--spacing-400);
+  font-size: clamp(2.00rem, calc(0.222rem + 3.704vw), 3.00rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -5%;
+  color: var(--c-blue-900);
+}
+
+.bmi-limitations-header p {
+  color: var(--c-grey-500);
+}
+
+.curved-image-right {
+  display: none;
+}
+
+.bmi-limitations-item {
+  padding: clamp(1.5rem, calc(1.023rem + 2.036vw), 2rem);
+  background-color: var(--c-white);
+  box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+  border-radius: 1rem;
+}
+
+.bmi-limitations-item-header {
+  margin-block-end: var(--spacing-200);
+  display: flex;
+  gap: var(--spacing-200); 
+  align-items: center;
+  color: var(--c-blue-900);
+}
+
+.bmi-limitations-item p {
+  color: var(--c-grey-500);
+}
  
 /* Media queries */
 @media (min-width: 32rem) {
@@ -377,6 +426,25 @@ body {
     position: relative;
     left: -5%;
     align-items: center;
+  }
+
+  /* BMI limitations */
+  .bmi-limitations-outer {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: clamp(1rem, calc(-0.778rem + 3.704vw), 2rem);
+  }
+
+  .bmi-limitations-header {
+    grid-column: span 4;
+  }
+
+  .bmi-limitations-item {
+    grid-column: span 2;
+  }
+
+  .bl-item-5 {
+    grid-column-start: 2;
+    grid-column-end: 4;
   }
 }
 
@@ -440,7 +508,7 @@ body {
   }
 
   /* BMI explanation */
-  .bmi-explanation {
+  .bmi-explanation { 
     grid-template-columns: max-content 1fr;
   }
 
@@ -475,6 +543,52 @@ body {
   .bmi-item {
     grid-template-columns: 1fr;
     gap: var(--spacing-600);
+  }
+
+  /* BMI limitations */
+  .bmi-limitations-outer {
+    padding-inline: 0;
+    grid-template-columns: repeat(12 ,1fr);
+  }
+
+  .bmi-limitations-header {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    text-align: left;
+  }
+
+  .curved-image-right {
+    display: block;
+    position: relative;
+    left: 40%;
+    top: -2.5%;
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+
+  .bl-item-1 {
+    grid-column-start: 8;
+    grid-column-end: 12;
+  }
+
+  .bl-item-2 {
+    grid-column-start: 5;
+    grid-column-end: 9;
+  }
+
+  .bl-item-3 {
+    grid-column-start: 9;
+    grid-column-end: 13;
+  }
+
+  .bl-item-4 {
+    grid-column-start: 3;
+    grid-column-end: 7;
+  }
+
+  .bl-item-5 {
+    grid-column-start: 7;
+    grid-column-end: 11;
   }
 }
 
