@@ -317,7 +317,7 @@ body {
   max-width: 35.25rem;
 }
 
-.curved-image {
+.curved-image-left {
   display: none;
 }
 
@@ -452,7 +452,7 @@ body {
     padding-block-end: var(--spacing-400);
   }
 
-  .curved-image {
+  .curved-image-left {
     display: flex;
     justify-content: flex-end;
     margin-block-end: var(--spacing-400);
