@@ -451,10 +451,6 @@ body {
   }
 
   /* Body input container */
-  .body-inner-container {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .calculator-result {
     grid-template-columns: 1fr 1fr;
     align-items: center;
