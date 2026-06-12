@@ -3,5 +3,5 @@ const metricRadio = document.getElementById("radio-metric");
 const imperialRadio = document.getElementById("radio-imperial");
 
 radioContainer.addEventListener("change", (e) => {
-  
+  console.log(e.target)
 })
