@@ -26,11 +26,9 @@ function updateBodyInputs(unit) {
   imperialInputs.forEach((input) => {
       input.classList.toggle("hidden");
     })
-
-  console.log(imperialInputs)
-  console.log(unit.id)
 }
 
+// Event Listeners
 radioContainer.addEventListener("change", (e) => {
   updateRadioUI(e.target);
 })
