@@ -245,6 +245,7 @@ body {
 
 .body-input-group input:focus {
   outline: none;
+  color: var(--c-blue-900);
 }
 
 .body-input-group span {
