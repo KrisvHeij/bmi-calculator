@@ -33,34 +33,12 @@
 }
 
 /* Font styles */
-.fw-400 {
-  font-weight: 400;
-}
-
 .fw-600 {
   font-weight: 600;
 }
 
-.fw-700 {
-  font-weight: 700;
-}
-
-.text-preset-1 {
-  font-size: 64px;
-  font-weight: 600;
-  line-height: 1.1;
-  letter-spacing: -5%;
-}
-
 .text-preset-2 {
   font-size: 48px;
-  font-weight: 600;
-  line-height: 1.1;
-  letter-spacing: -5%;
-}
-
-.text-preset-3 {
-  font-size: 32px;
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: -5%;
@@ -80,7 +58,6 @@
   letter-spacing: -5%;
 }
 
-/* save */
 .text-preset-6-semi {
   font-size: 1rem;
   font-weight: 600;
@@ -93,13 +70,6 @@
   line-height: 1.5;
 }
 
-.text-preset-7-bold {
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.5;
-}
-
-/* save */
 .text-preset-7-regular {
   font-size: 14px;
   font-weight: 400;
@@ -177,10 +147,10 @@ body {
   border-radius: 1rem;
   box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
 }
+
 .calculator-header {
   color: var(--c-blue-900);
   font-size: 1.5rem;
-  font-weight: 600;
   line-height: 1.2;
   letter-spacing: -5%;
 }
@@ -379,7 +349,6 @@ body {
 .bmi-limitations-header h3 {
   margin-block-end: var(--spacing-400);
   font-size: clamp(2.00rem, calc(0.222rem + 3.704vw), 3.00rem);
-  font-weight: 600;
   line-height: 1.1;
   letter-spacing: -5%;
   color: var(--c-blue-900);
