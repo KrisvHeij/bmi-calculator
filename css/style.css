@@ -498,6 +498,7 @@ body {
   .bmi-item {
     grid-template-columns: auto 1fr;
     gap: var(--spacing-500);
+    align-items: center;
   }
 }
 
