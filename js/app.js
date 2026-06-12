@@ -1,8 +1,4 @@
 const radioContainer = document.querySelector(".radio-input-container");
-const metricRadio = document.getElementById("radio-metric");
-const imperialRadio = document.getElementById("radio-imperial");
-
-
 
 function updateRadioUI(radio) {
   const radioBtns = document.querySelectorAll(".radio-input");
@@ -17,11 +13,22 @@ function updateRadioUI(radio) {
   radioClicked.setAttribute("checked", "");
   radioClicked.classList.add("radio-input-checked");
   
-  updateBodyInputs(radioClicked.id)
+  updateBodyInputs(radioClicked)
 }
 
 function updateBodyInputs(unit) {
-  console.log(unit)
+  const metricInputs = document.querySelectorAll(".metric-input");
+  const imperialInputs = document.querySelectorAll(".imperial-input-group");
+
+  metricInputs.forEach((input) => {
+      input.classList.toggle("hidden");
+    })
+  imperialInputs.forEach((input) => {
+      input.classList.toggle("hidden");
+    })
+
+  console.log(imperialInputs)
+  console.log(unit.id)
 }
 
 radioContainer.addEventListener("change", (e) => {
