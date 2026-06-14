@@ -4,6 +4,29 @@ const inputContainer = document.querySelector(".body-inner-container");
 let measurementUnit = "metric";
 let resultBmi;
 
+const weightClassification = [
+  {
+    name: "underweight",
+    min: 0,
+    max: 18.4,
+  },
+  {
+    name: "healthy weight",
+    min: 18.5,
+    max: 24.9
+  },
+  {
+    name: "overweight",
+    min: 25,
+    max: 29.9
+  },
+  {
+    name: "obese",
+    min: 30,
+    max: 100
+  }
+];
+
 function updateRadioUI(radio) {
   const radioBtns = document.querySelectorAll(".radio-input");
   const radioClicked = radio;
@@ -47,10 +70,11 @@ function calculateMetricBmi() {
   const heightCm = parseInt(document.getElementById("height-metric-cm").value);
   const weightKg = parseInt(document.getElementById("weight-metric-kg").value);
   
-  if (heightCm && weightKg) {
-    resultBmi = weightKg / ((heightCm / 100) * (heightCm / 100));
-  console.log(resultBmi)
-  }
+  resultBmi = weightKg / ((heightCm / 100) * (heightCm / 100));
+
+  if (heightCm > 0 && weightKg > 0) {
+    showBmiResult(resultBmi)
+  } 
 }
 
 function calculateImperial() {
@@ -58,16 +82,21 @@ function calculateImperial() {
   const heightInches = parseInt(document.getElementById("height-imperial-in").value);
   const weightStone = parseInt(document.getElementById("weight-imperial-st").value);
   const weightPounds = parseInt(document.getElementById("weight-imperial-lbs").value);
-
-  if (heightFeet && heightInches && weightStone && weightPounds) {
-    const heightInInches = (heightFeet * 12) + heightInches;
+ 
+  const heightInInches = (heightFeet * 12) + heightInches;
   const weightInLbs = (weightStone * 14) + weightPounds;
 
-    if (heightInInches && weightInLbs) {
-      resultBmi = (weightInLbs / (heightInInches * heightInInches)) * 703;
-    console.log(resultBmi)
-    }
+  resultBmi = (weightInLbs / (heightInInches * heightInInches)) * 703;
+
+  if (heightInInches > 0 && weightInLbs > 0) {
+    showBmiResult(resultBmi);
   }
+}
+
+function showBmiResult(result) {
+  const weightRange = weightClassification.find((item) => item.min < result && item.max > result);
+
+  console.log(weightRange)
 }
 
 // Event Listeners
@@ -86,4 +115,8 @@ inputContainer.addEventListener("keyup", () => {
   }
 })
 
-// Verder met vertraging van BMI result? en het resliutaat laten zien
+// Verder met showBmiResult()
+
+
+
+
