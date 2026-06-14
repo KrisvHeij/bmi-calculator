@@ -32,11 +32,22 @@ function updateBodyInputs(unit) {
     })
 }
 
+function hightlightInputs() {
+  const allMeasurementInputs = document.querySelectorAll("input[type=number]");
+
+  allMeasurementInputs.forEach((input) => {
+    if (input.value > 0) {
+      input.style.color = "var(--c-blue-900)";
+    }
+  })
+}
+
 function calculateMetricBmi() {
   const heightCm = parseInt(document.getElementById("height-metric-cm").value);
   const weightKg = parseInt(document.getElementById("weight-metric-kg").value);
   
-  // Verder gaan met berekening BMI
+  const BmiMetric = weightKg / ((heightCm / 100) * (heightCm / 100));
+  console.log(BmiMetric)
 }
 
 // Event Listeners
@@ -45,7 +56,10 @@ radioContainer.addEventListener("change", (e) => {
 })
 
 inputContainer.addEventListener("keyup", () => {
+  hightlightInputs()
   if (measurementUnit === "metric") {
     calculateMetricBmi();
   }
 })
+
+// Verder met calculate Imperial BMI
