@@ -73,11 +73,11 @@ function calculateMetricBmi() {
   resultBmi = weightKg / ((heightCm / 100) * (heightCm / 100));
 
   if (heightCm > 0 && weightKg > 0) {
-    showBmiResult(resultBmi)
+    showBmiResult(resultBmi);
   } 
 }
 
-function calculateImperial() {
+function calculateImperialBmi() {
   const heightFeet = parseInt(document.getElementById("height-imperial-ft").value);
   const heightInches = parseInt(document.getElementById("height-imperial-in").value);
   const weightStone = parseInt(document.getElementById("weight-imperial-st").value);
@@ -95,7 +95,8 @@ function calculateImperial() {
 
 function showBmiResult(result) {
   const weightRange = weightClassification.find((item) => item.min < result && item.max > result);
-
+  
+  console.log(result)
   console.log(weightRange)
 }
 
@@ -111,7 +112,7 @@ inputContainer.addEventListener("keyup", () => {
   }
 
   if (measurementUnit === "imperial") {
-    calculateImperial();
+    calculateImperialBmi();
   }
 })
 
