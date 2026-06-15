@@ -76,6 +76,16 @@
   line-height: 1.5;
 }
 
+.text-preset-7-bold {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.bold {
+  font-weight: 700;
+}
+
 /* General styles */
 *,
 *::after,

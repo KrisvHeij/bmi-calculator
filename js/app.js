@@ -11,7 +11,7 @@ const weightClassification = [
     max: 18.4,
   },
   {
-    name: "healthy weight",
+    name: "a healthy weight",
     min: 18.5,
     max: 24.9
   },
@@ -73,7 +73,7 @@ function calculateMetricBmi() {
   resultBmi = weightKg / ((heightCm / 100) * (heightCm / 100));
 
   if (heightCm > 0 && weightKg > 0) {
-    showBmiResult(resultBmi);
+    showBmiResult(resultBmi, heightCm);
   } 
 }
 
@@ -93,10 +93,39 @@ function calculateImperialBmi() {
   }
 }
 
-function showBmiResult(result) {
+function calculateWeightRangeMinMetric(height) {
+  const heightInMeters = height / 100;
+  return (18.5 * (heightInMeters * heightInMeters)).toFixed(1) + "kgs";
+}
+
+function calculateWeightRangeMaxMetric(height) {
+  const heightInMeters = height / 100;
+  return (25 * (heightInMeters * heightInMeters)).toFixed(1) + "kgs";
+}
+
+function showBmiResult(result, height) {
+  if (result < 0 || result > 100) {
+    return;
+  }
+
   const weightRange = weightClassification.find((item) => item.min < result && item.max > result);
+
+  // Hide welcome text and show result 
+  const welcomeText = document.getElementById("calculator-text");
+  const resultContainer = document.getElementById("calculator-result");
+  const bmi = document.getElementById("bmi-result");
+  const classification = document.getElementById("classification");
+  const rangeMin = document.getElementById("range-min");
+  const rangeMax = document.getElementById("range-max");
+
+  welcomeText.classList.add("hidden");
+  resultContainer.classList.remove("hidden");
+  bmi.textContent = resultBmi.toFixed(1);
+  classification.textContent = weightRange.name;
+  rangeMin.textContent = calculateWeightRangeMinMetric(height);
+  rangeMax.textContent = calculateWeightRangeMaxMetric(height);
   
-  console.log(result)
+  // console.log(result)
   console.log(weightRange)
 }
 
@@ -117,7 +146,3 @@ inputContainer.addEventListener("keyup", () => {
 })
 
 // Verder met showBmiResult()
-
-
-
-
