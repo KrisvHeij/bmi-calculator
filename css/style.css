@@ -288,6 +288,13 @@ body {
   margin-block-end: 0.5rem;
 }
 
+.bmi-result {
+  font-size: clamp(3.00rem, calc(1.222rem + 3.704vw), 4.00rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -5%;
+}
+
 /* BMI explanation */ 
 .bmi-explanation {
   padding-block : clamp(3rem, calc(1.569rem + 6.107vw), 6rem);
@@ -401,6 +408,11 @@ body {
     border-bottom-right-radius: 999px;
   }
 
+  .calculator-result {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
   /* BMI explanation */
   .bmi-explanation {
     grid-template-columns: 1fr 1fr;
@@ -462,9 +474,8 @@ body {
   }
 
   /* Body input container */
-  .calculator-result {
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
+  .calculator-result-header.text-preset-2 {
+    font-size: 4rem;
   }
 
   /* BMI explanation */

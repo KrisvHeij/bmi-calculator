@@ -60,9 +60,6 @@ function hightlightInputs(e) {
   const allMeasurementInputs = document.querySelectorAll("input[type=number]");
 
   allMeasurementInputs.forEach((input) => {
-    if (e.target.focus()) {
-      console.log("focus")
-    }
     if (input.value > 0) {
       input.style.color = "var(--c-blue-900)";
     }
@@ -76,7 +73,7 @@ function calculateMetricBmi() {
   resultBmi = weightKg / ((heightCm / 100) * (heightCm / 100));
 
   if (heightCm > 0 && weightKg > 0) {
-    showBmiResult(resultBmi, heightCm);
+    showResultText(resultBmi, heightCm);
   } 
 }
 
@@ -92,7 +89,7 @@ function calculateImperialBmi() {
   resultBmi = (weightInLbs / (heightInInches * heightInInches)) * 703;
 
   if (heightInInches > 0 && weightInLbs > 0) {
-    showBmiResult(resultBmi);
+    showResultText(resultBmi, heightInInches);
   }
 }
 
@@ -106,7 +103,17 @@ function calculateWeightRangeMaxMetric(height) {
   return (25 * (heightInMeters * heightInMeters)).toFixed(1) + "kgs";
 }
 
-function showBmiResult(result, height) {
+function calculateWeightRangeMinImperial(height) {
+  const rangeMinTotalLbs = (18.5 * (height * height)) / 703;
+  const rangeMinStone = rangeMinTotalLbs / 14;
+  const rangeMinLbs = rangeMinTotalLbs % 14;
+
+  return `${rangeMinStone.toFixed()}st ${rangeMinLbs.toFixed()}lbs`
+  console.log(rangeMinStone)
+  console.log(rangeMinLbs)
+}
+
+function showResultText(result, height) {
   if (result < 0 || result > 100) {
     return;
   }
@@ -125,10 +132,14 @@ function showBmiResult(result, height) {
   resultContainer.classList.remove("hidden");
   bmi.textContent = resultBmi.toFixed(1);
   classification.textContent = weightRange.name;
-  rangeMin.textContent = calculateWeightRangeMinMetric(height);
-  rangeMax.textContent = calculateWeightRangeMaxMetric(height);
+
+  if (measurementUnit === "metric") {
+    rangeMin.textContent = calculateWeightRangeMinMetric(height);
+    rangeMax.textContent = calculateWeightRangeMaxMetric(height);
+  }
+
+  rangeMin.textContent = calculateWeightRangeMinImperial(height);
   
-  // console.log(result)
   console.log(weightRange)
 }
 
