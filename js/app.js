@@ -64,7 +64,6 @@ function hightlightInputs(e) {
       input.style.color = "var(--c-blue-900)";
     }
   })
-}
 
 function calculateMetricBmi() {
   const heightCm = parseInt(document.getElementById("height-metric-cm").value);
@@ -93,24 +92,18 @@ function calculateImperialBmi() {
   }
 }
 
-function calculateWeightRangeMinMetric(height) {
+function calculateWeightRangeMetric(minmax, height) {
   const heightInMeters = height / 100;
-  return (18.5 * (heightInMeters * heightInMeters)).toFixed(1) + "kgs";
+  return (minmax * (heightInMeters * heightInMeters)).toFixed(1) + "kgs";
 }
 
-function calculateWeightRangeMaxMetric(height) {
-  const heightInMeters = height / 100;
-  return (25 * (heightInMeters * heightInMeters)).toFixed(1) + "kgs";
-}
-
-function calculateWeightRangeMinImperial(height) {
-  const rangeMinTotalLbs = (18.5 * (height * height)) / 703;
+function calculateWeightRangeImperial(minmax, height) {
+  const rangeMinTotalLbs = (minmax * (height * height)) / 703;
   const rangeMinStone = rangeMinTotalLbs / 14;
   const rangeMinLbs = rangeMinTotalLbs % 14;
 
-  return `${rangeMinStone.toFixed()}st ${rangeMinLbs.toFixed()}lbs`
-  console.log(rangeMinStone)
-  console.log(rangeMinLbs)
+  return `${Math.floor(rangeMinStone)}st ${Math.round(rangeMinLbs)}lbs`;
+  
 }
 
 function showResultText(result, height) {
@@ -134,12 +127,15 @@ function showResultText(result, height) {
   classification.textContent = weightRange.name;
 
   if (measurementUnit === "metric") {
-    rangeMin.textContent = calculateWeightRangeMinMetric(height);
-    rangeMax.textContent = calculateWeightRangeMaxMetric(height);
+    rangeMin.textContent = calculateWeightRangeMetric(18.5, height);
+    rangeMax.textContent = calculateWeightRangeMetric(24.9, height);
   }
 
-  rangeMin.textContent = calculateWeightRangeMinImperial(height);
-  
+  if (measurementUnit === "imperial") {
+    rangeMin.textContent = calculateWeightRangeImperial(18.5, height);
+    rangeMax.textContent = calculateWeightRangeImperial(24.9, height);
+  }
+
   console.log(weightRange)
 }
 
@@ -159,4 +155,4 @@ inputContainer.addEventListener("keyup", (e) => {
   }
 })
 
-// Verder met showBmiResult()
+// Verder met functies samenvoegen en naar classificaties kijken: Underweight -> bmi < 18.5 dan is het ideale gewicht 56 / 75kg.
