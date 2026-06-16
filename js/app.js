@@ -56,10 +56,13 @@ function updateBodyInputs(unit) {
     })
 }
 
-function hightlightInputs() {
+function hightlightInputs(e) {
   const allMeasurementInputs = document.querySelectorAll("input[type=number]");
 
   allMeasurementInputs.forEach((input) => {
+    if (e.target.focus()) {
+      console.log("focus")
+    }
     if (input.value > 0) {
       input.style.color = "var(--c-blue-900)";
     }
@@ -134,8 +137,8 @@ radioContainer.addEventListener("change", (e) => {
   updateRadioUI(e.target);
 })
 
-inputContainer.addEventListener("keyup", () => {
-  hightlightInputs()
+inputContainer.addEventListener("keyup", (e) => {
+  hightlightInputs(e)
   if (measurementUnit === "metric") {
     calculateMetricBmi();
   }
