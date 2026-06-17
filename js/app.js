@@ -27,18 +27,8 @@ const weightClassification = [
   }
 ];
 
-function updateRadioUI(radio) {
-  const radioBtns = document.querySelectorAll(".radio-input");
+function updateRadioUI(radio) {     
   const radioClicked = radio;
-  // Reset styles from radio inputs
-  radioBtns.forEach((radio) => {
-    radio.removeAttribute("checked");
-    radio.classList.remove("radio-input-checked");
-  })
-
-  // Add styles to clicked radio input
-  radioClicked.setAttribute("checked", "");
-  radioClicked.classList.add("radio-input-checked");
   
   measurementUnit = radioClicked.id;
   updateBodyInputs(radioClicked)

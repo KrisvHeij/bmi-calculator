@@ -177,7 +177,6 @@ body {
   border: 1px solid var(--c-grey-500);
   border-radius: 50%;
 }
-
 .radio-input,
 .radio-group label {
   cursor: pointer;
@@ -187,13 +186,8 @@ body {
   border-color: var(--c-blue-500);
 }
 
-.radio-input:focus {
-  border-color: var(--c-blue-500);
-  outline: none;
-}
-
 /* Checked state for radio input */
-.radio-input-checked {
+.radio-input:checked {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -201,7 +195,7 @@ body {
   background-color: var(--c-blue-100);
 }
 
-.radio-input-checked::after {
+.radio-input:checked::after {
   display: inline-block;
   content: "";
   width: 15px;
@@ -209,6 +203,11 @@ body {
   background-color: var(--c-blue-500);
   border-radius: 50%;
 }
+
+.radio-input:focus {
+  border-color: var(--c-blue-500);
+  outline: none;
+}           
 
 .radio-group label {
   color: var(--c-blue-900);
