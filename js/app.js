@@ -64,6 +64,7 @@ function hightlightInputs(e) {
       input.style.color = "var(--c-blue-900)";
     }
   })
+}
 
 function calculateMetricBmi() {
   const heightCm = parseInt(document.getElementById("height-metric-cm").value);
@@ -135,8 +136,6 @@ function showResultText(result, height) {
     rangeMin.textContent = calculateWeightRangeImperial(18.5, height);
     rangeMax.textContent = calculateWeightRangeImperial(24.9, height);
   }
-
-  console.log(weightRange)
 }
 
 // Event Listeners
@@ -154,5 +153,3 @@ inputContainer.addEventListener("keyup", (e) => {
     calculateImperialBmi();
   }
 })
-
-// Verder met functies samenvoegen en naar classificaties kijken: Underweight -> bmi < 18.5 dan is het ideale gewicht 56 / 75kg.
