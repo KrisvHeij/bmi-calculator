@@ -176,6 +176,10 @@ body {
   height: 31px;
   border: 1px solid var(--c-grey-500);
   border-radius: 50%;
+}
+
+.radio-input,
+.radio-group label {
   cursor: pointer;
 }
 
