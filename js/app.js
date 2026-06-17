@@ -48,6 +48,13 @@ function updateBodyInputs(unit) {
   const metricInputs = document.querySelectorAll(".metric-input");
   const imperialInputs = document.querySelectorAll(".imperial-input-group");
 
+  if (measurementUnit === "metric") {
+    inputContainer.classList.add("grid-col-2");
+  } else {
+    inputContainer.classList.remove("grid-col-2");
+  }
+  console.log(unit)
+
   metricInputs.forEach((input) => {
       input.classList.toggle("hidden");
     })

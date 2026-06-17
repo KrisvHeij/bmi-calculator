@@ -453,7 +453,8 @@ body {
   }
 
   .background-gradient {
-    display: none;
+    left: -25%;
+    height: 58rem;
   }
 
   .logo {
@@ -462,7 +463,7 @@ body {
   }
 
   .intro-text {
-    align-content: center;
+    margin-block-start: var(--spacing-900);
     text-align: left;
   }
 
@@ -471,6 +472,10 @@ body {
   }
 
   /* Body input container */
+  .grid-col-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  
   .calculator-result-header.text-preset-2 {
     font-size: 4rem;
   }
